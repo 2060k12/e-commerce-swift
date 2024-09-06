@@ -21,6 +21,13 @@
 		CE8FD3702C8AA40A0044B980 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD36F2C8AA40A0044B980 /* User.swift */; };
 		CE8FD3722C8ABC650044B980 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3712C8ABC650044B980 /* LoginViewModel.swift */; };
 		CE8FD3752C8AC0360044B980 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3742C8AC0360044B980 /* TextFields.swift */; };
+		CE8FD3772C8ACBDA0044B980 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3762C8ACBDA0044B980 /* DetailScreen.swift */; };
+		CE8FD3792C8AD4610044B980 /* Butttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3782C8AD4610044B980 /* Butttons.swift */; };
+		CE8FD37B2C8AE0970044B980 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD37A2C8AE0960044B980 /* Cart.swift */; };
+		CE8FD37D2C8AE2380044B980 /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD37C2C8AE2380044B980 /* CartScreen.swift */; };
+		CE8FD37F2C8AEE6D0044B980 /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD37E2C8AEE6D0044B980 /* AccountScreen.swift */; };
+		CE8FD3822C8AF3C30044B980 /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3812C8AF3C30044B980 /* EditScreen.swift */; };
+		CE8FD3842C8AFA520044B980 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3832C8AFA520044B980 /* AccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		CE8FD36F2C8AA40A0044B980 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE8FD3712C8ABC650044B980 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CE8FD3742C8AC0360044B980 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		CE8FD3762C8ACBDA0044B980 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		CE8FD3782C8AD4610044B980 /* Butttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Butttons.swift; sourceTree = "<group>"; };
+		CE8FD37A2C8AE0960044B980 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		CE8FD37C2C8AE2380044B980 /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
+		CE8FD37E2C8AEE6D0044B980 /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
+		CE8FD3812C8AF3C30044B980 /* EditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
+		CE8FD3832C8AFA520044B980 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +128,9 @@
 				CE8FD3662C87D6950044B980 /* Home */,
 				CE8FD3642C87D5010044B980 /* TabScreen.swift */,
 				CE8FD36D2C87DB9B0044B980 /* Login */,
+				CE8FD3762C8ACBDA0044B980 /* DetailScreen.swift */,
+				CE8FD37C2C8AE2380044B980 /* CartScreen.swift */,
+				CE8FD3802C8AF3AC0044B980 /* Profile */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -141,6 +158,7 @@
 			children = (
 				CE8FD3612C87B8160044B980 /* Cake.swift */,
 				CE8FD36F2C8AA40A0044B980 /* User.swift */,
+				CE8FD37A2C8AE0960044B980 /* Cart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,8 +167,19 @@
 			isa = PBXGroup;
 			children = (
 				CE8FD3742C8AC0360044B980 /* TextFields.swift */,
+				CE8FD3782C8AD4610044B980 /* Butttons.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CE8FD3802C8AF3AC0044B980 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FD37E2C8AEE6D0044B980 /* AccountScreen.swift */,
+				CE8FD3812C8AF3C30044B980 /* EditScreen.swift */,
+				CE8FD3832C8AFA520044B980 /* AccountViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,11 +255,18 @@
 				CE8FD35B2C87B6740044B980 /* NetworkManager.swift in Sources */,
 				CE8FD3622C87B8160044B980 /* Cake.swift in Sources */,
 				CE8FD3722C8ABC650044B980 /* LoginViewModel.swift in Sources */,
+				CE8FD37F2C8AEE6D0044B980 /* AccountScreen.swift in Sources */,
 				CE8FD3702C8AA40A0044B980 /* User.swift in Sources */,
+				CE8FD3822C8AF3C30044B980 /* EditScreen.swift in Sources */,
+				CE8FD3792C8AD4610044B980 /* Butttons.swift in Sources */,
+				CE8FD37D2C8AE2380044B980 /* CartScreen.swift in Sources */,
 				CE8FD35E2C87B7160044B980 /* Const.swift in Sources */,
 				CE8FD36C2C87DB870044B980 /* RegisterScreen.swift in Sources */,
+				CE8FD3842C8AFA520044B980 /* AccountViewModel.swift in Sources */,
+				CE8FD37B2C8AE0970044B980 /* Cart.swift in Sources */,
 				CE8FD3682C87D69F0044B980 /* HomeScreen.swift in Sources */,
 				CE8FD3602C87B7910044B980 /* Utlis.swift in Sources */,
+				CE8FD3772C8ACBDA0044B980 /* DetailScreen.swift in Sources */,
 				CE8FD36A2C87DB720044B980 /* LoginScreen.swift in Sources */,
 				CE8FD34C2C87B6400044B980 /* E_CommerseApp.swift in Sources */,
 				CE8FD3652C87D5010044B980 /* TabScreen.swift in Sources */,

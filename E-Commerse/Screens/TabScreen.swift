@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct TabScreen : View {
+    @EnvironmentObject var cart : Cart
     var body: some View {
         TabView {
             
@@ -18,13 +19,15 @@ struct TabScreen : View {
                                Text("Home")
                            }
             
-            HomeScreen()
+            CartScreen()
                 .tabItem {
                                Image(systemName: "cart")
                                Text("Cart")
                            }
+                .badge(cart.listOfCart
+                    .count)
             
-            HomeScreen()
+            AccountScreen()
                 .tabItem {
                                Image(systemName: "person")
                                Text("Profile")

@@ -8,6 +8,7 @@
 import Foundation
 
 /// `LoginViewModel` handles the data and logic required for login and registration tasks.
+/// 
 /// It follows the singleton pattern to ensure a single shared instance for consistent data management
 /// between login and registration screens.
 class LoginViewModel : ObservableObject {

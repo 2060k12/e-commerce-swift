@@ -16,12 +16,15 @@ struct HomeScreen : View {
             List{
                 
                 ForEach( cakeList, id: \._id ) { cake in
+                    NavigationLink(destination: DetailScreen(cake: cake)){
                     HStack{
                         Text(cake.displayName)
                             .font(.title)
                         Spacer()
                         Text(String(cake.price))
                     }
+                    }
+                    
                 }
                 .navigationTitle("Home")
                 

@@ -8,11 +8,12 @@
 import Foundation
 
 
-struct Cake : Codable {
+class Cake : Codable {
     var _id : String
     var displayName: String
-    var imageUrl: String
+    var imageUrl: String?
     var price: Float
+    var description : String?
     var createdAt: String
     var updatedAt: String
     var __v : Int

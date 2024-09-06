@@ -21,16 +21,23 @@ struct CustomInputTextField: View {
         if(!isSecuredField) {
             TextField(textFieldTitle, text: $textValue)
                 .padding()
-                .frame(width : 300, height : 50)
+                .frame(width : (UIScreen.main.bounds.width - 32), height : 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
+                
+            
         }
         else {
             SecureField(textFieldTitle, text: $textValue)
                 .padding()
-                .frame(width : 300, height : 50)
+                .frame(width : (UIScreen.main.bounds.width - 32), height : 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
         }
     }
+}
+
+
+#Preview {
+    CustomInputTextField(textFieldTitle: "Demo", textValue: .constant(""))
 }

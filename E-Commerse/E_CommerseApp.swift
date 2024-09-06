@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct E_CommerseApp: App {
+    var cart = Cart()
+    
     var body: some Scene {
         WindowGroup {
-            LoginScreen()
+//          LoginScreen()
+            TabScreen().environmentObject(cart)
         }
     }
 }
