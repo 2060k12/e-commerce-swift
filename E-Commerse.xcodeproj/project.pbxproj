@@ -19,6 +19,8 @@
 		CE8FD36A2C87DB720044B980 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3692C87DB720044B980 /* LoginScreen.swift */; };
 		CE8FD36C2C87DB870044B980 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD36B2C87DB870044B980 /* RegisterScreen.swift */; };
 		CE8FD3702C8AA40A0044B980 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD36F2C8AA40A0044B980 /* User.swift */; };
+		CE8FD3722C8ABC650044B980 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3712C8ABC650044B980 /* LoginViewModel.swift */; };
+		CE8FD3752C8AC0360044B980 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FD3742C8AC0360044B980 /* TextFields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		CE8FD3692C87DB720044B980 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		CE8FD36B2C87DB870044B980 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		CE8FD36F2C8AA40A0044B980 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE8FD3712C8ABC650044B980 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CE8FD3742C8AC0360044B980 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		CE8FD34A2C87B6400044B980 /* E-Commerse */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FD3732C8AC0290044B980 /* Components */,
 				CE8FD36E2C8AA3F90044B980 /* Model */,
 				CE8FD3632C87D26D0044B980 /* Screens */,
 				CE8FD35C2C87B7060044B980 /* Utils */,
@@ -126,6 +131,7 @@
 			children = (
 				CE8FD36B2C87DB870044B980 /* RegisterScreen.swift */,
 				CE8FD3692C87DB720044B980 /* LoginScreen.swift */,
+				CE8FD3712C8ABC650044B980 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -137,6 +143,14 @@
 				CE8FD36F2C8AA40A0044B980 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE8FD3732C8AC0290044B980 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FD3742C8AC0360044B980 /* TextFields.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +225,7 @@
 			files = (
 				CE8FD35B2C87B6740044B980 /* NetworkManager.swift in Sources */,
 				CE8FD3622C87B8160044B980 /* Cake.swift in Sources */,
+				CE8FD3722C8ABC650044B980 /* LoginViewModel.swift in Sources */,
 				CE8FD3702C8AA40A0044B980 /* User.swift in Sources */,
 				CE8FD35E2C87B7160044B980 /* Const.swift in Sources */,
 				CE8FD36C2C87DB870044B980 /* RegisterScreen.swift in Sources */,
@@ -219,6 +234,7 @@
 				CE8FD36A2C87DB720044B980 /* LoginScreen.swift in Sources */,
 				CE8FD34C2C87B6400044B980 /* E_CommerseApp.swift in Sources */,
 				CE8FD3652C87D5010044B980 /* TabScreen.swift in Sources */,
+				CE8FD3752C8AC0360044B980 /* TextFields.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

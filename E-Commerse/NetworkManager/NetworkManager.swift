@@ -45,17 +45,60 @@ class NetworkManager {
     }
     
     
-    func registereUser(userName : String, email : String, password : String, address : String, phoneNumber : String) {
+    func registereUser(fullName : String, email : String, password : String, address : String, phoneNumber : String) async  -> Bool{
         
         let uri = "/user/register"
         let completeUrl = "\(Const.backendBaseURL)\(uri)"
         
         guard let safeUrl = URL(string: completeUrl) else {
             print("Unable to get Safe Url")
-            return
+            return false
         }
         
+        var request = URLRequest(url: safeUrl)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")  // Set content type
+
         
+        let user = User(fullName: fullName, password: password, email: email, phoneNumber: phoneNumber, address: address)
+        print(user)
+        // converting data into JSON data
+        
+        do {
+            let jsonData = try JSONEncoder().encode(user)
+            request.httpBody = jsonData
+            
+        }catch let error {
+            print(error)
+            return false
+        }
+        
+        do {
+            
+        // creating URLSession data task
+            let (data, response) = try await URLSession.shared.data(for: request)
+            print(data)
+            print(".....")
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Status code: \(httpResponse.statusCode)")
+            }
+            
+            // decode the response
+            if let json = try? JSONSerialization.jsonObject(with: data) as? [String : Any]{
+                print("Response JSON : \(json)")
+            }
+            else {
+                print(user)
+                print(data)
+                print("Failed to decode")
+            }
+            return true
+            
+        }catch {
+            print("Request failed with error: \(error.localizedDescription)")
+            return false
+
+        }
     }
     
     

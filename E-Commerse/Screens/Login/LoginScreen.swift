@@ -8,15 +8,9 @@
 import SwiftUI
 
 struct LoginScreen : View {
-    
-    @State var email = ""
-    @State var password  = ""
-    
-    @State private var wrongEmail = 0
-    @State private var wrongPassword = 0
     @State private var successfullLogin = false
-    @State private var showRegisterScreen = false
 
+    @StateObject var viewModel = LoginViewModel.initialize
 
 
     var body: some View {
@@ -24,29 +18,12 @@ struct LoginScreen : View {
         NavigationStack {
             
             ZStack{
-                
-                                    
+                    
                 VStack {
                     
-                        TextField("Email", text: $email)
-                        .padding()
-                            .disableAutocorrection(true)
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.05))
-                            .cornerRadius(10)
-                            .border(.red, width: CGFloat(wrongEmail))
-                        
-                        SecureField("Password", text: $password)
-                        .padding()
-                        .disableAutocorrection(true)
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongEmail))
-                        
-                        
-                        
-                        
+                    CustomInputTextField(textFieldTitle: "Email", textValue: $viewModel.loginEmail)
+                    CustomInputTextField(textFieldTitle: "Password", textValue: $viewModel.loginPassword, isSecuredField: true)
+                    
                         Button {
                             
                         } label: {
@@ -58,7 +35,7 @@ struct LoginScreen : View {
                         .cornerRadius(10)
                     
                     Button {
-                        showRegisterScreen = true
+                        viewModel.showRegisterScreen = true
                     } label: {
                         Text("Register")
                     }
@@ -67,14 +44,12 @@ struct LoginScreen : View {
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                     
-
-                    
                 }
             }
             .navigationTitle("Login")
         }
-        .sheet(isPresented: $showRegisterScreen, content: {
-            RegisterScreen(showingRegister: $showRegisterScreen)
+        .sheet(isPresented: $viewModel.showRegisterScreen, content: {
+            RegisterScreen()
         })
     }
     
@@ -82,5 +57,5 @@ struct LoginScreen : View {
 
 
 #Preview {
-    LoginScreen(email: "", password: "");
+    LoginScreen();
 }
