@@ -13,8 +13,8 @@ struct E_CommerseApp: App {
     
     var body: some Scene {
         WindowGroup {
-//          LoginScreen()
-            TabScreen().environmentObject(cart)
+          LoginScreen().environmentObject(cart)
+//        TabScreen().environmentObject(cart)
         }
     }
 }

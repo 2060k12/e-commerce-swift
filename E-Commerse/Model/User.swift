@@ -17,6 +17,11 @@ struct User : Codable {
 
 }
 
+struct LoginUser : Codable {
+    var email : String
+    var password : String
+}
+
 struct UserResponse : Decodable {
     var data : [User]
 }

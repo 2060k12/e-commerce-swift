@@ -27,7 +27,6 @@ struct RegisterScreen : View {
                     CustomInputTextField(textFieldTitle: "Confirm Password", textValue: $viewModel.confirmPassword, isSecuredField: true)
                    
                     
-                    
                     Button{
                       
                             viewModel.registerUser()

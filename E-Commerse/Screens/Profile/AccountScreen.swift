@@ -29,33 +29,52 @@ struct AccountScreen: View {
                     }.padding()
                     
                     List{
-                      
-                        ProfileList(label: "Full Name", systemImage: "person")
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                viewModel.editType = .fullName
-                                viewModel.showEditScreen = true
-                            }
-                        ProfileList(label: "Email", systemImage: "mail")
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                viewModel.editType = .email
-                                viewModel.showEditScreen = true
-                            }
-                        ProfileList(label: "Address", systemImage: "location")
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                viewModel.editType = .address
-                                viewModel.showEditScreen = true
-                            }
-                        ProfileList(label: "Password", systemImage: "lock")
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                viewModel.editType = .password
-                                viewModel.showEditScreen = true
-                            }
+                        Section {
                             
+                            ProfileList(label: "Full Name", systemImage: "person")
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    viewModel.editType = .fullName
+                                    viewModel.showEditScreen = true
+                                    
+                                }
+                            ProfileList(label: "Email", systemImage: "mail")
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    viewModel.editType = .email
+                                    viewModel.showEditScreen = true
+                                }
+                            ProfileList(label: "Address", systemImage: "location")
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    viewModel.editType = .address
+                                    viewModel.showEditScreen = true
+                                }
+                            ProfileList(label: "Password", systemImage: "lock")
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    viewModel.editType = .password
+                                    viewModel.showEditScreen = true
+                                }
+                            
+                    
+                        }
+                        
+                        
+                        
+                        Section{
+                            ProfileList(label: "Privacy Policy", systemImage: "lock.square.fill", showEdit: false)
+                            ProfileList(label: "Help Center", systemImage: "questionmark.circle", showEdit: false)
+                            ProfileList(label: "Sigout", systemImage: "arrow.up.forward.app", showEdit: false)
+                            
+                          
+                        }
+                        
                     }
+                
+                    
+                    
+                    
                     
                     Spacer()
                     
@@ -79,6 +98,7 @@ struct AccountScreen: View {
 struct ProfileList: View {
     let label : String
     let systemImage : String
+    var showEdit = true
     
     var body: some View {
         HStack(spacing: 30) {
@@ -87,7 +107,8 @@ struct ProfileList: View {
                 .font(.title2)
             Spacer()
             
-            Image(systemName: "square.and.pencil")
+            if(showEdit) { Image(systemName: "square.and.pencil")}
+            
 
         }
         .padding(3)

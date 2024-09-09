@@ -28,9 +28,13 @@ class LoginViewModel : ObservableObject {
     @Published var address = ""
     
     
+    
+    
     // MARK: - Login Screen Properties
     @Published var loginEmail = ""
     @Published var loginPassword  = ""
+    @Published var loginSuccessStatus = false
+    @Published var loginError : LoginError?
     
  
     /// Registers the user with the input data.
@@ -51,6 +55,36 @@ class LoginViewModel : ObservableObject {
             }
         }
         
+    }
+    
+    
+    func loginUser()  {
+        Task {
+            switch (await networkManager.loginUser(email: loginEmail , password: loginPassword)) {
+            case .success(let success):
+                if(success) {
+                    DispatchQueue.main.async {
+                        self.loginSuccessStatus = true }
+                    }
+                else {
+                    DispatchQueue.main.async {
+                        self.loginSuccessStatus = false
+                        self.loginError = .unknown
+                        
+                    }
+                }
+                
+               
+                
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.loginSuccessStatus = false
+                    self.loginError = error
+                }
+                    
+            }
+            
+        }
     }
     
 }
